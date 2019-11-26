@@ -25,7 +25,7 @@ class usuario(models.Model):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
     compañia = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=12)
+    telefono = models.CharField(max_length=20)
     fec_nac = models.DateField('Fecha de nacimiento')
 
     ACTIVO = 'A'
@@ -48,7 +48,7 @@ class proveedor(models.Model):
     proveedor = models.CharField(max_length=50)
     ruc = models.IntegerField()
     direccion = models.CharField(max_length=50)
-    telefono = models.CharField(max_length=12)
+    telefono = models.CharField(max_length=20)
     correo = models.EmailField(max_length=30)
     empresa = models.CharField(max_length=50)
     cod_tipo_prov = models.ForeignKey('tipo_proveedor', on_delete=models.CASCADE)
@@ -73,7 +73,7 @@ class categoria_producto(models.Model):
 class producto(models.Model):
     cod_prod = models.IntegerField(primary_key=True)
     producto = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=90)
+    descripcion = models.CharField(max_length=200)
     cod_cat = models.ForeignKey('categoria_producto', on_delete=models.CASCADE)
     precio = models.IntegerField()
     stock = models.IntegerField()
