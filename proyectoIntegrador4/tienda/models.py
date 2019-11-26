@@ -65,7 +65,7 @@ class proveedor(models.Model):
 class categoria_producto(models.Model):
     cod_cat = models.IntegerField(primary_key=True)
     categoria = models.CharField(max_length=40)
-    descripcion = models.CharField(max_length=90)
+    descripcion = models.CharField(max_length=200)
 
     def __str__(self):
         return self.categoria
